@@ -15,15 +15,16 @@ return [
     |
     */
 
-    'paths' => ['api/*', 'sanctum/csrf-cookie'],
+    // Currently, I have to change the /api into /* in order to get access teh localhost
+    'paths' => ['api/*', 'sanctum/csrf-cookie', "api/admin/*", "api/user/*", "*"],
 
     'allowed_methods' => ['*'],
 
-    'allowed_origins' => ['*'],
+    'allowed_origins' => ["http://localhost:8080"],
 
     'allowed_origins_patterns' => [],
 
-    'allowed_headers' => ['*'],
+    'allowed_headers' => ['X-Custom-Header', 'Upgrade-Insecure-Requests', '*'],
 
     'exposed_headers' => [],
 
